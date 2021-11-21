@@ -1,0 +1,47 @@
+{
+  "name": "conmorexa-bot",
+  "version": "1.0.0",
+  "description": "conmorexa abbr of \"consules mora exacerbaverant\" meaning \"procrastination\" in Latin, probably.",
+  "main": "index.js",
+  "scripts": {
+    "watch": "tsc -p tsconfig.json -w",
+    "build": "tsc -p tsconfig.json",
+    "test": "mocha -r ts-node/register \"tests/**/*.spec.ts\"",
+    "traceResolution": "tsc -p tsconfig.json --traceResolution",
+    "pm2:start": "pm2 start ecosystem.config.js --node-args=\"-r ./register-paths.js\"",
+    "pm2:watch": "pm2 start ecosystem.config.js --node-args=\"-r ./register-paths.js\" --watch",
+    "pm2:stop": "pm2 stop ecosystem.config.js",
+    "pm2:restart": "npm run pm2:stop && npm run pm2:start",
+    "pm2:wrestart": "npm run pm2:stop && npm run pm2:watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/builders": "^0.6.0",
+    "@discordjs/rest": "^0.1.0-canary.0",
+    "@types/node": "^16.10.1",
+    "@types/validator": "^13.6.3",
+    "common-tags": "^1.8.0",
+    "discord-api-types": "^0.23.1",
+    "discord.js": "^13.1.0",
+    "dotenv": "^10.0.0",
+    "inversify": "^5.1.1",
+    "inversify-binding-decorators": "^4.0.0",
+    "js-chess-engine": "^0.11.3",
+    "mysql2": "^2.3.0",
+    "reflect-metadata": "^0.1.13",
+    "sequelize": "^6.6.5",
+    "sqlite3": "^5.0.2",
+    "typescript": "^4.4.3"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.2.22",
+    "@types/mocha": "^9.0.0",
+    "chai": "^4.3.4",
+    "eslint": "^7.32.0",
+    "mocha": "^9.1.2",
+    "ts-mockito": "^2.6.1",
+    "ts-node": "^10.2.1",
+    "tsconfig-paths": "^3.11.0"
+  }
+}
